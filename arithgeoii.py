@@ -10,8 +10,33 @@ def arithgeoII(lst):
 	Negative numbers may be entered as parameters, 0 will not be entered, and no array will 
 	contain all the same elements. 
 	Example::
-	>>> arithgeoII([5,10,15]):
+	>>> arithgeoII([5,10,15])
 	'Arithmetic'
-	>>> arithgeoII([2,4,16,24]):
+	>>> arithgeoII([2,4,16,24])
 	-1
+	>>> arithgeoII([2, 6, 18, 54])
+	'Geometric'
 	"""
+	flag = -1
+	arith = lst[1] - lst[0]
+	geo = lst[1] / lst[0]
+
+	idx = 0
+	while idx < len(lst) - 1:
+		if lst[idx + 1] - arith == lst[idx]:
+			flag = 'Arithmetic'
+		elif lst[idx + 1] / geo == lst[idx]:
+			flag = 'Geometric'
+		else: 
+			flag = -1
+		idx += 1
+
+	return flag
+
+#####################################################################
+if __name__ == "__main__":
+	print
+	import doctest
+	if doctest.testmod().failed == 0:
+		print "*** ALL TESTS PASSED ***"
+
