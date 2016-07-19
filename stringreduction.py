@@ -22,4 +22,20 @@ def string_reduction(string):
 						'ba':'c',
 						'cb':'a'
 					  }
-	
+
+	for letter in string:
+		string = string.replace('ac','b')
+		string = string.replace('ca','b')
+		string = string.replace('bc','a')
+		string = string.replace('ab','c')
+		string = string.replace('ba','c')
+		string = string.replace('cb','c')
+	return len(string)
+
+#####################################################################
+if __name__ == "__main__":
+	print
+	import doctest
+	if doctest.testmod().failed == 0:
+		print "*** ALL TESTS PASSED ***"
+     

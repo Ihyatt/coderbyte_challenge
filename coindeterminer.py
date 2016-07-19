@@ -11,4 +11,24 @@ def coin_deter(num):
 	>>> coin_deter(16)
 	2
 	"""
-	
+	if num < 5:
+		return num 
+
+	count = 1
+	while num - 11 > 0:
+		count += 1
+		num -= 11
+
+	if num % 2 == 0:
+		count += 1
+
+	return count
+
+
+#####################################################################
+if __name__ == "__main__":
+	print
+	import doctest
+	if doctest.testmod().failed == 0:
+		print "*** ALL TESTS PASSED ***"
+     
