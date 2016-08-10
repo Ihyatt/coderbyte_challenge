@@ -1,7 +1,3 @@
-import itertools
-
-def is_wave_sort(lst):
-
 
 
 def wave_sorting(lst):
@@ -15,7 +11,20 @@ def wave_sorting(lst):
 	False
 
 	>>> wave_sorting([0, 4, 22, 4, 14, 4, 2])
+	True
 	"""
 
-	arrangements = lst.
+	for num in lst:
+		if lst.count(num) > len(lst) / 2.0:
+			return False
+	return True
+	
+
+
+#####################################################################
+if __name__ == "__main__":
+	print
+	import doctest
+	if doctest.testmod().failed == 0:
+		print "*** ALL TESTS PASSED ***"
 
