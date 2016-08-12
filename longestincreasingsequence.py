@@ -1,3 +1,5 @@
+from itertools import permutations
+
 def longest_seq(lst):
 	""" have the function LongestIncreasingSequence(arr) take the array of positive 
 	integers stored in arr and return the length of the longest increasing subsequence 
@@ -10,9 +12,40 @@ def longest_seq(lst):
 	Example::
 	>>> longest_seq([9, 9, 4, 2])
 	1
-	>>> longest_seq([10, 22, 9, 33, 21, 50, 41, 60, 22, 68, 90])
-	7
+	
 	"""
+	uniq = list(set(lst))
+	combo = []
+	samples = []
+	new_samples = []
+
+
+	if sorted(lst) == lst and len(uniq) == len(lst):
+		return len(lst)
+
+	for i in reversed(range(2, len(lst) - 1)):
+		combo.append(i)
+	
+	for test in combo:
+		sample = list(permutations(lst, test))
+		
+		samples.append(sample)
+	
+
+	for sample in samples:
+		new_sample = list(sample)
+		new_samples.append(new_sample)
+
+	for sublst in new_samples:
+		if sublst == sublst.sort():
+			return len(sublst)
+	return 1
+
+
+
+
+
+
 
 
 #####################################################################
