@@ -1,4 +1,5 @@
-def non_repeating():
+
+def none_repeating(string):
 	"""have the function NonrepeatingCharacter(str) take the str parameter 
 	being passed, which will contain only alphabetic characters and spaces, 
 	and return the first non-repeating character. For example: if str is 
@@ -6,12 +7,21 @@ def non_repeating():
 	contain at least one character and there will always be at least one 
 	non-repeating character. 
 	Example::
-	>>> non-repeating("abcdef")
-	"a"
+	>>> none_repeating("abcdef")
+	'a'
 
-	>>> non-repeating("hello world hi hey")
-	"w"
+	>>> none_repeating("hello world hi hey")
+	'w'
 	"""
+	no_rep= None
+	letters = list(string)
+	for letter in letters:
+		if letters.count(letter) == 1:
+			no_rep = letter
+			break
+	return no_rep 
+
+	
 
 
 #####################################################################
